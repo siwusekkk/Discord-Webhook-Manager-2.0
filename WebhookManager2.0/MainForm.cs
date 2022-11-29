@@ -40,7 +40,10 @@ namespace WebhookManager2._0
             string title = titleInput.Text;
             string description = descriptionInput.Text;
             string thumbnail = thumbnailInput.Text;
-            int delay = int.Parse(delayInput.Text);
+            if(delayInput.Text != "")
+            {
+                int delay = int.Parse(delayInput.Text);
+            }
 
             if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Send Webhook")
             {
