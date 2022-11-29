@@ -32,16 +32,7 @@ namespace WebhookManager2._0.Webhook
             }
             catch (Exception e)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("\n\nSomething went wrong...");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("[");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("Exception");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("]");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write(" " + e + "\n\n");
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
