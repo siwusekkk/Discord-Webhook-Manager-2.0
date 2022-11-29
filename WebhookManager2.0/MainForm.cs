@@ -43,6 +43,10 @@ namespace WebhookManager2._0
             if(delayInput.Text != "")
             {
                 int delay = int.Parse(delayInput.Text);
+                if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Spam Webhook")
+                {
+                    SpamWebhook.SpamWebhookMethod(webhookUrl, username, message, delay);
+                }
             }
 
             if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Send Webhook")
@@ -56,10 +60,6 @@ namespace WebhookManager2._0
             else if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Send Embed")
             {
                 SendEmbed.SendEmbedMethod(webhookUrl, username, title, description, thumbnail);
-            }
-            else if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Spam Webhook")
-            {
-                SpamWebhook.SpamWebhookMethod(webhookUrl, username, message, delay);
             }
         }
 
