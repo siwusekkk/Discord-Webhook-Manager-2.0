@@ -40,6 +40,7 @@ namespace WebhookManager2._0
             string title = titleInput.Text;
             string description = descriptionInput.Text;
             string thumbnail = thumbnailInput.Text;
+            int delay = int.Parse(delayInput.Text);
 
             if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Send Webhook")
             {
@@ -55,7 +56,7 @@ namespace WebhookManager2._0
             }
             else if (activityChoice.GetItemText(activityChoice.SelectedItem) == "Spam Webhook")
             {
-                //SpamWebhook.SpamWebhookMethod(webhookUrl, username, message, delay);
+                SpamWebhook.SpamWebhookMethod(webhookUrl, username, message, delay);
             }
         }
 
